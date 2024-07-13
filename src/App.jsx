@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -18,12 +19,41 @@ function App() {
 </html>
 `;
 
+  const [copy, setCopy] = useState(false);
+
   return (
     <>
       <div className="bg-gray-600">
         <div className="container mx-auto">
           <div className="grid place-items-center h-screen">
-            <div className="max-w-2xl min-w-[25rem] bg-[3a404d] rounded-md overflow-hidden">
+            <div className="max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
+              <div className="flex justify-between items-center px-4 text-gray-50 text-xs">
+                <p className="text-sm">HTML</p>
+                {copy ? (
+                  <button className="py-1 gap-1 inline-flex items-center">
+                    <span className="mt-1 text-base">
+                      <ion-icon name="checkmark-outline"></ion-icon>
+                    </span>
+                    Copied!
+                  </button>
+                ) : (
+                  <button
+                    className="py-1 gap-1 inline-flex items-center"
+                    onClick={() => {
+                      navigator.clipboard.writeText(codeString);
+                      setCopy(true);
+                      setTimeout(() => {
+                        setCopy(false);
+                      }, 3000);
+                    }}
+                  >
+                    <span className="mt-1 text-base">
+                      <ion-icon name="clipboard-outline"></ion-icon>
+                    </span>
+                    Copy code
+                  </button>
+                )}
+              </div>
               <SyntaxHighlighter
                 language="html"
                 style={atomOneDark}
