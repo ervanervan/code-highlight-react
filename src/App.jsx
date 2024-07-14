@@ -4,6 +4,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function App() {
+  const [copy, setCopy] = useState(false);
+
   const codeString = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,8 +20,6 @@ function App() {
   </body>
 </html>
 `;
-
-  const [copy, setCopy] = useState(false);
 
   return (
     <>
