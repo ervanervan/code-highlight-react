@@ -57,7 +57,7 @@ function App() {
               <SyntaxHighlighter
                 language="html"
                 style={atomOneDark}
-                customStyle={{ padding: "20px" }}
+                customStyle={{ padding: "26px" }}
                 wrapLongLines={true}
               >
                 {codeString}
