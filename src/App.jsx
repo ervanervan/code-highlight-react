@@ -29,6 +29,7 @@ function App() {
             <div className="max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
               <div className="flex justify-between items-center px-4 text-gray-50 text-xs">
                 <p className="text-sm">HTML</p>
+
                 {copy ? (
                   <button className="py-1 gap-1 inline-flex items-center">
                     <span className="mt-1 text-base">
